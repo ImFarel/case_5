@@ -1,3 +1,10 @@
+1.	Tab HOME -> yang berisi tentang garis besar YAYASAN SEKOLAH tersebut 
+2.	Tab Fasilitas dan layanan -> tab dimana penjelasan tentang Fasilitas dan layanan yang ada di sekolah  
+3.	TAB About US -> penjelasan tentang perusahaan  , kata sambutan dari Ketua Yayasan , plus visi misi  
+4.	Tab Aktivitas Ekstrakulikuler -> berisi penjelasan tentang extrakurikuler yang ada di sekolah 
+5.	Contact us -> yang berisi tentang info kontak ke perusahaan dan membuat form registrasi untuk  bersertakan validasi , sebagai form tamu  
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
