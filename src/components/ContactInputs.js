@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function ContactInputs() {
+  const [isLoading, setIsLoading] = useState(false);
   const [payload, setPayload] = useState({
     nama: "",
     email: "",
@@ -18,12 +19,23 @@ export default function ContactInputs() {
   };
 
   const onSubmitHandler = (e) => {
+    setIsLoading(true);
     console.log(e);
     e.preventDefault();
 
     if (!e.target.checkValidity()) {
       e.target.classList.add("was-validated");
+      setIsLoading(false);
+      return null;
     }
+    alert("Terkirim!");
+    setPayload({
+      nama: "",
+      email: "",
+      alamat: "",
+      pertanyaan: "",
+    });
+    setIsLoading(false);
   };
 
   return (
@@ -38,9 +50,11 @@ export default function ContactInputs() {
             className="form-control"
             id="name"
             name="nama"
+            value={payload.nama}
             placeholder=""
             onChange={onChangeHandler}
             required
+            disabled={isLoading}
           />
           <div className="invalid-feedback">Nama tidak boleh kosong</div>
         </div>
@@ -53,10 +67,12 @@ export default function ContactInputs() {
             type="email"
             className="form-control"
             name="email"
+            value={payload.email}
             onChange={onChangeHandler}
             id="email"
             placeholder="you@example.com"
             required
+            disabled={isLoading}
           />
           <div className="invalid-feedback">Email tidak boleh kosong.</div>
         </div>
@@ -68,11 +84,13 @@ export default function ContactInputs() {
           <input
             type="text"
             className="form-control"
+            value={payload.alamat}
             name="alamat"
             onChange={onChangeHandler}
             id="address"
             placeholder="Jakarta Pusat"
             required
+            disabled={isLoading}
           />
           <div className="invalid-feedback">Alamat tidak boleh kosong.</div>
         </div>
@@ -86,12 +104,18 @@ export default function ContactInputs() {
             id="exampleFormControlTextarea1"
             name="pertanyaan"
             rows="3"
+            value={payload.pertanyaan}
             onChange={onChangeHandler}
             required
+            disabled={isLoading}
           ></textarea>
           <div className="invalid-feedback">Pertanyaan tidak boleh kosong.</div>
         </div>
-        <button className="w-100 btn btn-primary btn-lg" type="submit">
+        <button
+          className="w-100 btn btn-primary btn-lg"
+          type="submit"
+          disabled={isLoading}
+        >
           Kirim Pertanyaan
         </button>
       </div>

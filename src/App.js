@@ -1,4 +1,5 @@
-import { Col, Container, Row } from "react-bootstrap";
+// import { Modal } from "bootstrap";
+import { Modal, Button, Container } from "react-bootstrap";
 import CardComp from "./components/CardComp";
 import ContactInputs from "./components/ContactInputs";
 import Feature from "./components/Feature";
